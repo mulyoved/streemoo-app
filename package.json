@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-nextjs-landing-pages",
+  "name": "streemoo-app",
   "version": "1.0.6",
   "scripts": {
     "build": "lerna run build --parallel",

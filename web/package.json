@@ -11,10 +11,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^1.149.16",
     "@sanity/image-url": "^0.140.19",
     "@zeit/next-css": "^1.0.1",
+    "emotion-theming": "^10.0.27",
     "groq": "^1.149.16",
     "lodash": "^4.17.11",
     "next": "^9.4.4",

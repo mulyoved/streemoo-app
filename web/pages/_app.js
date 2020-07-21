@@ -4,6 +4,8 @@ import client from "../client";
 // import 'normalize.css'
 import "../styles/shared.module.css";
 import "../styles/layout.css";
+import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { theme } from "@chakra-ui/core";
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
@@ -19,6 +21,10 @@ const siteConfigQuery = `
     }
   }[0]
   `;
+
+const customTheme = {
+  ...theme,
+};
 
 class App extends BaseApp {
   static async getInitialProps({ Component, ctx }) {
@@ -43,7 +49,13 @@ class App extends BaseApp {
 
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+
+    return (
+      <ThemeProvider theme={customTheme}>
+        <CSSReset />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    );
   }
 }
 

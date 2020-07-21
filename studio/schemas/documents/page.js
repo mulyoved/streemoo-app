@@ -21,6 +21,7 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'imageSection' },
+        { type: 'text3Images' },
         { type: 'mailchimp' },
         { type: 'textSection' },
       ],
@@ -47,4 +48,4 @@ export default {
       media: 'openGraphImage',
     },
   },
-};
+}
