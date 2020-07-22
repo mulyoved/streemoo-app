@@ -47,6 +47,7 @@ module.exports = withCSS({
         // Routes imported from sanity
         ...routes.filter(({ slug }) => slug.current).reduce(reduceRoutes, {}),
         "/custom-page": { page: "/CustomPage" },
+        "/scratchpad": { page: "/ScratchPadPage" },
       };
       return nextRoutes;
     });
