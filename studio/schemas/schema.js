@@ -22,6 +22,7 @@ import simplePortableText from './objects/simplePortableText'
 import hero from './objects/hero'
 import imageSection from './objects/imageSection'
 import text3Images from './objects/text3Images'
+import responsiveGrid from './objects/responsiveGrid'
 import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 
@@ -37,6 +38,7 @@ export default createSchema({
     hero,
     imageSection,
     text3Images,
+    responsiveGrid,
     internalLink,
     link,
     mailchimp,

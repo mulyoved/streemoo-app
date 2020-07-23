@@ -7,7 +7,7 @@ import SimpleBlockContent from "../SimpleBlockContent";
 
 const builder = imageUrlBuilder(client);
 
-function Text3Images(props) {
+function ResponsiveGrid(props) {
   const { heading, label, text, images, cta } = props;
 
   return (
@@ -16,45 +16,29 @@ function Text3Images(props) {
       mx="auto"
       maxWidth="5xl"
       flexWrap="wrap"
-      alignContent="flex-start"
+      flexDirection="column"
+      alignItems="center"
     >
-      <Box
-        as="section"
-        width="sm"
-        d="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-        textAlign="center"
-      >
+      <Box as="section" width="lg" textAlign="center">
         <Text fontSize="5xl" fontWeight="bold">
           {heading}
         </Text>
         {text && <SimpleBlockContent blocks={text} />}
       </Box>
-      <Flex maxW="528px" m={10} flexWrap="wrap" alignContent="flex-start">
+      <Box>
         {images.map((image, i) => (
           <Image
             key={i}
-            p={3}
-            flexGrow={1}
-            flexShrink={1}
-            maxWidth={i < 2 ? "50%" : "100%"}
-            src={builder
-              .image(image)
-              .auto("format")
-              .height(200)
-              .width(i < 2 ? 252 : 504)
-              .url()}
+            src={builder.image(image).auto("format").height(240).width(344).url()}
             alt={image.alt}
           />
         ))}
-      </Flex>
+      </Box>
     </Flex>
   );
 }
 
-Text3Images.propTypes = {
+ResponsiveGrid.propTypes = {
   heading: PropTypes.string,
   label: PropTypes.string,
   text: PropTypes.array,
@@ -64,4 +48,4 @@ Text3Images.propTypes = {
   cta: PropTypes.object,
 };
 
-export default Text3Images;
+export default ResponsiveGrid;

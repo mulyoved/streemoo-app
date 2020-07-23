@@ -22,6 +22,7 @@ export default {
         { type: 'hero' },
         { type: 'imageSection' },
         { type: 'text3Images' },
+        { type: 'responsiveGrid' },
         { type: 'mailchimp' },
         { type: 'textSection' },
       ],
