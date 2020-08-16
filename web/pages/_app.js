@@ -24,6 +24,14 @@ const siteConfigQuery = `
 
 const customTheme = {
   ...theme,
+  fonts: {
+    ...theme.fonts,
+    // body: "Lobster",
+  },
+  colors: {
+    ...theme.colors,
+    background: theme.colors.gray[200],
+  },
 };
 
 class App extends BaseApp {

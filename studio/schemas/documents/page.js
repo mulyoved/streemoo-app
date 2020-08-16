@@ -23,6 +23,7 @@ export default {
         { type: 'imageSection' },
         { type: 'text3Images' },
         { type: 'responsiveGrid' },
+        { type: 'paymentSection' },
         { type: 'mailchimp' },
         { type: 'textSection' },
       ],

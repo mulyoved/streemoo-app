@@ -23,6 +23,7 @@ import hero from './objects/hero'
 import imageSection from './objects/imageSection'
 import text3Images from './objects/text3Images'
 import responsiveGrid from './objects/responsiveGrid'
+import paymentSection from './objects/paymentSection'
 import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 
@@ -39,6 +40,7 @@ export default createSchema({
     imageSection,
     text3Images,
     responsiveGrid,
+    paymentSection,
     internalLink,
     link,
     mailchimp,

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Link from "next/link";
 import { withRouter } from "next/router";
 import SVG from "react-inlinesvg";
 import styles from "./Header.module.css";
 import HamburgerIcon from "./icons/Hamburger";
+import { Link } from "@chakra-ui/core";
+import NextLink from "next/link";
 
 class Header extends Component {
   state = { showNav: false };
@@ -74,7 +75,7 @@ class Header extends Component {
     return (
       <div className={styles.root} data-show-nav={showNav}>
         <h1 className={styles.branding}>
-          <Link
+          <NextLink
             href={{
               pathname: "/LandingPage",
               query: {
@@ -84,7 +85,7 @@ class Header extends Component {
             as="/"
           >
             <a title={title}>{this.renderLogo(logo)}</a>
-          </Link>
+          </NextLink>
         </h1>
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
@@ -95,15 +96,15 @@ class Header extends Component {
                   router.pathname === "/LandingPage" && router.query.slug === slug.current;
                 return (
                   <li key={_id} className={styles.navItem}>
-                    <Link
+                    <NextLink
                       href={{
                         pathname: "/LandingPage",
                         query: { slug: slug.current },
                       }}
                       as={`/${slug.current}`}
                     >
-                      <a data-is-active={isActive ? "true" : "false"}>{title}</a>
-                    </Link>
+                      <Link data-is-active={isActive ? "true" : "false"}>{title}</Link>
+                    </NextLink>
                   </li>
                 );
               })}

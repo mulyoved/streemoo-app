@@ -7,6 +7,11 @@ class ScratchPadPage extends React.Component {
   render() {
     const { config } = this.props;
 
+    const json = {
+      0: { row: 2, col: 2 },
+      2: { row: 2 },
+      6: { col: 2 },
+    };
     return (
       <Layout config={config}>
         <Box backgroundColor="blue.100">

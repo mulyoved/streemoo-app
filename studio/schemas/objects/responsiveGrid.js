@@ -31,6 +31,11 @@ export default {
       ],
     },
     {
+      name: 'imagesSize',
+      title: 'Images Size (JSON)',
+      type: 'string',
+    },
+    {
       name: 'cta',
       type: 'cta',
       title: 'Call to action',
