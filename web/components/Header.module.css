@@ -2,11 +2,18 @@
 @import "../styles/custom-properties.css";
 
 .root {
-  position: relative;
+  position: absolute;
   color: var(--color-black, #000);
   display: flex;
   margin: 0 auto;
-  max-width: var(--width-small);
+  width: 100vw;
+  z-index: 1;
+  background-position-y: top;
+  background-color: rgba(169, 0, 181, 0.28);
+  background-blend-mode: hard-light;
+  backdrop-filter: blur(6px);
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .root a {
@@ -24,7 +31,7 @@
   @nest & > a {
     display: block;
     padding: 1.5em;
-
+    
     @supports (padding-top: env(safe-area-inset-top)) {
       padding-left: calc(env(safe-area-inset-left) + 1.5rem);
     }
@@ -95,8 +102,13 @@
   @nest & > a {
     display: block;
     position: relative;
-    padding: 1.5rem 0.5rem;
-
+    margin: 1.5rem 0.5rem;
+    color: var(--color-white, #fff);
+    font-family: 'Comfortaa';
+    border-bottom: 2px solid transparent;
+    @nest &:hover{
+      border-bottom: 2px solid #79D1C2;
+    };
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;
       width: 100%;

@@ -8,7 +8,7 @@
   color: var(--color-white, #fff);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top;
   padding-bottom: 2rem;
 
   @media (--media-min-medium) {
@@ -43,12 +43,12 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 0;
-  padding-top: 12.5rem;
-
+  padding-top: 12rem;
+  text-align: center;
   @media (--media-min-medium) {
     font-size: var(--font-title1-size);
     line-height: var(--font-title1-line-height);
-    padding-top: 15rem;
+    padding-top: 12rem;
   }
 }
 
@@ -59,7 +59,8 @@
   margin-top: 0.5em;
   margin-bottom: 1rem;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-
+  text-align: center;
+  padding-bottom: 25rem;
   @media (--media-min-medium) {
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);

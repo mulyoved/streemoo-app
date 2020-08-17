@@ -22,6 +22,14 @@ export default {
       },
     },
     {
+      name: 'backgroundMaskImage',
+      type: 'image',
+      title: 'Background Mask image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'ctas',
       type: 'array',
       title: 'Call to actions',

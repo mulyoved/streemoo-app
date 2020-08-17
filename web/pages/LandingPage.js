@@ -78,7 +78,10 @@ class LandingPage extends Component {
     return null
   }
 
+  
+
   render () {
+    console.log("content", content)
     const {
       title = 'Missing title',
       description,
