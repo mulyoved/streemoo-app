@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../components-old/Layout";
 import { Box, Grid } from "@chakra-ui/core";
 
 class ScratchPadPage extends React.Component {

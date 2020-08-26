@@ -26,6 +26,7 @@ import responsiveGrid from './objects/responsiveGrid'
 import paymentSection from './objects/paymentSection'
 import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
+import FPHero from './objects/fp-hero'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -50,5 +51,7 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
+
+    FPHero,
   ]),
 })

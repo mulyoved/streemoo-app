@@ -20,6 +20,7 @@ export default {
       title: 'Page sections',
       of: [
         { type: 'hero' },
+        { type: 'FPHero' },
         { type: 'imageSection' },
         { type: 'text3Images' },
         { type: 'responsiveGrid' },

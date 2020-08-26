@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
       <Html lang={this.props.lang || "en"}>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Roboto:ital,wght@1,900&display=swap"
             rel="stylesheet"
           />
         </Head>
