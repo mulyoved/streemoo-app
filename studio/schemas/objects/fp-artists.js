@@ -1,7 +1,7 @@
 export default {
   type: 'object',
-  name: 'FPHero',
-  title: 'FPHero',
+  name: 'FPArtists',
+  title: 'FPArtists',
   fields: [
     {
       name: 'heading',
@@ -12,6 +12,18 @@ export default {
       name: 'text',
       type: 'simplePortableText',
       title: 'Text',
+    },
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        {
+          name: 'image',
+          type: 'gridImage',
+          title: 'Image',
+        },
+      ],
     },
     {
       name: 'backgroundImage',
@@ -25,13 +37,11 @@ export default {
   preview: {
     select: {
       title: 'heading',
-      media: 'backgroundImage',
     },
-    prepare({ title, media }) {
+    prepare({ title }) {
       return {
         title,
-        subtitle: 'Hero section',
-        media,
+        subtitle: 'Artists section',
       }
     },
   },

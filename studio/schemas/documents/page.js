@@ -21,6 +21,9 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'FPHero' },
+        { type: 'FPArtists' },
+        { type: 'FPSubscribe' },
+        { type: 'FPUpcoming' },
         { type: 'imageSection' },
         { type: 'text3Images' },
         { type: 'responsiveGrid' },

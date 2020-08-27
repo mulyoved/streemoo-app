@@ -27,6 +27,10 @@ import paymentSection from './objects/paymentSection'
 import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 import FPHero from './objects/fp-hero'
+import FPArtists from './objects/fp-artists'
+import FPSubscribe from './objects/fp-subscribe'
+import FPUpcoming from './objects/fp-upcoming'
+import gridImage from './objects/grid-image'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,6 +56,11 @@ export default createSchema({
     siteConfig,
     textSection,
 
+    gridImage,
+
     FPHero,
+    FPArtists,
+    FPSubscribe,
+    FPUpcoming,
   ]),
 })
