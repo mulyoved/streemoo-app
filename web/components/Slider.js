@@ -8,17 +8,22 @@ export default class SimpleSlider extends Component {
     const { slides } = this.props;
     const settings = {
       dots: true,
+      centerMode: true,
+      centerPadding: "0",
+      className: "center",
       infinite: true,
       speed: 500,
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 1,
       initialSlide: 0,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "60px",
           },
         },
         {
@@ -44,13 +49,18 @@ export default class SimpleSlider extends Component {
             return (
               <Box
                 key={idx}
+                className="slide-item"
                 style={{
                   display: "flex!important",
                   marginLeft: "10px!important",
                   marginRight: "10px!important",
+                  borderRadius: "15px!important",
                 }}
               >
-                <Image src={urlFor(slide)} alt={slide.caption} />
+                <Image
+                  src={urlFor(slide).width(470).height(256).auto("format").url()}
+                  alt={slide.caption}
+                />
                 <Flex
                   alignItems="center"
                   justifyContent="center"
@@ -60,6 +70,7 @@ export default class SimpleSlider extends Component {
                   width="100%"
                   fontSize={["lg", "sm", "md", "lg", "xl"]}
                   fontWeight="bold"
+                  p="3"
                 >
                   {slide.caption}
                 </Flex>

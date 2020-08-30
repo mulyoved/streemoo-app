@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import { NextSeo } from "next-seo";
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
-import Layout from "../components-old/Layout";
+import Layout from "../components/Layout";
 import client from "../client";
-import RenderSections from "../components-old/RenderSections";
+import RenderSections from "../components/RenderSections";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = groq`

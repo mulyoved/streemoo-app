@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box, Flex, Image, Link, PseudoBox } from "@chakra-ui/core";
 import NextLink from "next/link";
+import SVG from "react-inlinesvg";
+import styles from "../components-old/Header.module.css";
 
 const links = [
   { id: 1, title: "Home", link: "/" },
@@ -8,9 +10,21 @@ const links = [
   { id: 3, title: "About", link: "/about" },
 ];
 
-export const Header = () => {
+export const Header = ({ logo }) => {
   const [show, setShow] = useState(false);
   const handleToggleMenu = () => setShow(!show);
+
+  const renderLogo = (logo) => {
+    if (!logo || !logo.asset) {
+      return null;
+    }
+
+    if (logo.asset.extension === "svg") {
+      return <SVG src={logo.asset.url} className={styles.logo} />;
+    }
+
+    return <img src={logo.asset.url} alt={logo.title} className={styles.logo} />;
+  };
 
   return (
     <Flex
@@ -18,10 +32,14 @@ export const Header = () => {
       justify="space-between"
       wrap="wrap"
       padding="0.7rem"
-      bg="rgba(169, 0, 181, 0.28)"
       color="white"
-      style={{ backdropFilter: "blur(10px)" }}
+      top={0}
+      style={{
+        background: "linear-gradient(180deg,rgba(255,255,255,1), rgba(255,255,255,0))",
+      }}
       width="100%"
+      position="fixed"
+      zIndex={100}
     >
       <NextLink
         href={{
@@ -33,7 +51,7 @@ export const Header = () => {
         as="/"
       >
         <Link to="/" style={{ width: "157px", height: "49px" }}>
-          <Image src="logo.png" className="logo" alt="Streemoo" style={{ objectFit: "cover" }} />
+          {renderLogo(logo)}
         </Link>
       </NextLink>
 
@@ -71,6 +89,8 @@ export const Header = () => {
                 fontSize="md"
                 borderBottomColor="transparent"
                 borderBottomWidth="2px"
+                color="purple.900"
+                cursor="pointer"
                 _hover={{ borderBottomColor: "tourquise.500" }}
                 _focus={{ borderBottomColor: "tourquise.500" }}
                 _active={{ borderBottomColor: "tourquise.500" }}

@@ -31,7 +31,6 @@ export const FPHero = ({ heading, text, backgroundImage }) => {
         mx="auto"
         width="90%"
       >
-        <Heading title={heading} fontSize="5xl" />
         {text && (
           <Text
             width={["full", "full", "lg", "660px"]}

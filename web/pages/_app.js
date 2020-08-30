@@ -4,6 +4,8 @@ import client from "../client";
 // import 'normalize.css'
 import "../styles/shared.module.css";
 import "../styles/layout.css";
+import "slick-carousel/slick/slick.css";
+import "../styles/slick.css";
 
 // import "slick-carousel/slick/slick.css";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
