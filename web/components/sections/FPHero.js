@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/core";
-import { AppHeading as Heading } from "../ui/AppHeading";
 import PropTypes from "prop-types";
 import SimpleBlockContent from "../../components-old/SimpleBlockContent";
 import { urlFor } from "../utils";
@@ -24,13 +23,16 @@ export const FPHero = ({ heading, text, backgroundImage }) => {
         justify="center"
         alignItems="center"
         flexDirection="column"
-        pt={["30px", "30px", "50px", "80px"]}
+        pt={["100px", "100px", "135px", "160px"]}
         pb={["320px", "320px", "580px", "580px"]}
         color="white"
         overflow="hidden"
         mx="auto"
         width="90%"
       >
+        <Text as="h1" fontSize="xl">
+          {heading}
+        </Text>
         {text && (
           <Text
             width={["full", "full", "lg", "660px"]}

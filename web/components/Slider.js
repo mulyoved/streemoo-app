@@ -50,6 +50,7 @@ export default class SimpleSlider extends Component {
               <Box
                 key={idx}
                 className="slide-item"
+                cursor="pointer"
                 style={{
                   display: "flex!important",
                   marginLeft: "10px!important",
