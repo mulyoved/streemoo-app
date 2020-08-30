@@ -9,7 +9,7 @@ import "../styles/slick.css";
 
 // import "slick-carousel/slick/slick.css";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
-import { customTheme } from "./theme";
+import { customTheme } from "../components/theme";
 
 const siteConfigQuery = `
   *[_id == "global-config"] {

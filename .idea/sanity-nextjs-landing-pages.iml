@@ -6,6 +6,8 @@
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/web/.next" />
+      <excludeFolder url="file://$MODULE_DIR$/web/components-old" />
+      <excludeFolder url="file://$MODULE_DIR$/web/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

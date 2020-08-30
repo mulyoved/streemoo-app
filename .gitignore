@@ -7,3 +7,6 @@
 # lerna files
 /lerna-debug.log
 
+dist
+studio/dist
+web/dist
