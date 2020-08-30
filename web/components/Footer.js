@@ -1,59 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
-import {withRouter} from 'next/router'
-import styles from './Footer.module.css'
-import SimpleBlockContent from './SimpleBlockContent'
+import React from "react";
+import { Flex, Image, Link, Text, Stack } from "@chakra-ui/core";
+import { footerLinks, social } from "./data";
+import NextLink from "next/link";
 
-function Footer (props) {
-  const {navItems, text, router} = props
+export const Footer = () => {
   return (
-    <div className={styles.root}>
-      <nav>
-        <ul className={styles.items}>
-          {navItems &&
-            navItems.map(item => {
-              const isActive =
-                router.pathname === '/LandingPage' && router.query.slug === item.slug.current
-              return (
-                <li key={item._id} className={styles.item}>
-                  <Link
-                    href={{
-                      pathname: '/LandingPage',
-                      query: {slug: item.slug.current}
-                    }}
-                    as={`/${item.slug.current}`}
-                  >
-                    <a data-is-active={isActive ? 'true' : 'false'}>{item.title}</a>
-                  </Link>
-                </li>
-              )
-            })}
-        </ul>
-      </nav>
-      <div className={styles.text}>
-        <SimpleBlockContent blocks={text} />
-      </div>
-    </div>
-  )
-}
-
-Footer.propTypes = {
-  navItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      slug: PropTypes.shape({
-        current: PropTypes.string
-      }).isRequired
-    })
-  ),
-  text: PropTypes.arrayOf(PropTypes.object),
-  router: PropTypes.shape({
-    pathname: PropTypes.string,
-    query: PropTypes.shape({
-      slug: PropTypes.string
-    })
-  })
-}
-
-export default withRouter(Footer)
+    <Flex as="footer" padding={4} bg="blue.500" color="white" height="110px">
+      <Flex
+        width={["100%", "100%", "100%", "1200px"]}
+        mx="auto"
+        align="center"
+        justify="space-between"
+        wrap="wrap"
+      >
+        <Stack isInline>
+          <Text fontSize="sm" pr="10px">
+            © 2020 STREEMOO. All Rights Reserved.
+          </Text>
+          {social.map((icon) => {
+            return (
+              <Link key={icon.id} href={icon.href} ml="20px" isExternal>
+                <Image size="23px" src={icon.src} alt={icon.alt} />
+              </Link>
+            );
+          })}
+        </Stack>
+        <Flex width={{ sm: "full", md: "350px", lg: "400px" }} justify={{ sm: "space-around" }}>
+          {footerLinks.map((item) => {
+            return (
+              <NextLink href={item.link} key={item.id}>
+                <Link ml={["0", "0", "0", "95px"]} fontSize="sm">
+                  {item.title}
+                </Link>
+              </NextLink>
+            );
+          })}
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};

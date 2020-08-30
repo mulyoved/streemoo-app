@@ -22,8 +22,15 @@ import simplePortableText from './objects/simplePortableText'
 import hero from './objects/hero'
 import imageSection from './objects/imageSection'
 import text3Images from './objects/text3Images'
+import responsiveGrid from './objects/responsiveGrid'
+import paymentSection from './objects/paymentSection'
 import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
+import FPHero from './objects/fp-hero'
+import FPArtists from './objects/fp-artists'
+import FPSubscribe from './objects/fp-subscribe'
+import FPUpcoming from './objects/fp-upcoming'
+import gridImage from './objects/grid-image'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +44,8 @@ export default createSchema({
     hero,
     imageSection,
     text3Images,
+    responsiveGrid,
+    paymentSection,
     internalLink,
     link,
     mailchimp,
@@ -46,5 +55,12 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
+
+    gridImage,
+
+    FPHero,
+    FPArtists,
+    FPSubscribe,
+    FPUpcoming,
   ]),
 })

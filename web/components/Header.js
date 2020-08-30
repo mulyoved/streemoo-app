@@ -1,61 +1,20 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import { withRouter } from "next/router";
+import React, { useState } from "react";
+import { Box, Flex, Image, Link, PseudoBox } from "@chakra-ui/core";
+import NextLink from "next/link";
 import SVG from "react-inlinesvg";
-import styles from "./Header.module.css";
-import HamburgerIcon from "./icons/Hamburger";
+import styles from "../components-old/Header.module.css";
 
-class Header extends Component {
-  state = { showNav: false };
+const links = [
+  { id: 1, title: "Home", link: "/" },
+  { id: 2, title: "Artists & Shows", link: "/artists_shows" },
+  { id: 3, title: "About", link: "/about" },
+];
 
-  static propTypes = {
-    router: PropTypes.shape({
-      pathname: PropTypes.string,
-      query: PropTypes.shape({
-        slug: PropTypes.string,
-      }),
-      events: PropTypes.any,
-    }),
-    title: PropTypes.string,
-    navItems: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        slug: PropTypes.shape({
-          current: PropTypes.string,
-        }).isRequired,
-      })
-    ),
-    logo: PropTypes.shape({
-      asset: PropTypes.shape({
-        url: PropTypes.string,
-      }),
-      logo: PropTypes.string,
-    }),
-  };
+export const Header = ({ logo }) => {
+  const [show, setShow] = useState(false);
+  const handleToggleMenu = () => setShow(!show);
 
-  componentDidMount() {
-    const { router } = this.props;
-    router.events.on("routeChangeComplete", this.hideMenu);
-  }
-
-  componentWillUnmount() {
-    const { router } = this.props;
-    router.events.off("routeChangeComplete", this.hideMenu);
-  }
-
-  hideMenu = () => {
-    this.setState({ showNav: false });
-  };
-
-  handleMenuToggle = () => {
-    const { showNav } = this.state;
-    this.setState({
-      showNav: !showNav,
-    });
-  };
-
-  renderLogo = (logo) => {
+  const renderLogo = (logo) => {
     if (!logo || !logo.asset) {
       return null;
     }
@@ -67,54 +26,81 @@ class Header extends Component {
     return <img src={logo.asset.url} alt={logo.title} className={styles.logo} />;
   };
 
-  render() {
-    const { title = "Missing title", navItems, router, logo } = this.props;
-    const { showNav } = this.state;
+  return (
+    <Flex
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      padding="0.7rem"
+      color="white"
+      top={0}
+      style={{
+        background: "linear-gradient(180deg,rgba(255,255,255,1), rgba(255,255,255,0))",
+      }}
+      width="100%"
+      position="fixed"
+      zIndex={100}
+    >
+      <NextLink
+        href={{
+          pathname: "/LandingPage",
+          query: {
+            slug: "/",
+          },
+        }}
+        as="/"
+      >
+        <Link to="/" style={{ width: "157px", height: "49px" }}>
+          {renderLogo(logo)}
+        </Link>
+      </NextLink>
 
-    return (
-      <div className={styles.root} data-show-nav={showNav}>
-        <h1 className={styles.branding}>
-          <Link
-            href={{
-              pathname: "/LandingPage",
-              query: {
-                slug: "/",
-              },
-            }}
-            as="/"
-          >
-            <a title={title}>{this.renderLogo(logo)}</a>
-          </Link>
-        </h1>
-        <nav className={styles.nav}>
-          <ul className={styles.navItems}>
-            {navItems &&
-              navItems.map((item) => {
-                const { slug, title, _id } = item;
-                const isActive =
-                  router.pathname === "/LandingPage" && router.query.slug === slug.current;
-                return (
-                  <li key={_id} className={styles.navItem}>
-                    <Link
-                      href={{
-                        pathname: "/LandingPage",
-                        query: { slug: slug.current },
-                      }}
-                      as={`/${slug.current}`}
-                    >
-                      <a data-is-active={isActive ? "true" : "false"}>{title}</a>
-                    </Link>
-                  </li>
-                );
-              })}
-          </ul>
-          <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
-            <HamburgerIcon className={styles.hamburgerIcon} />
-          </button>
-        </nav>
-      </div>
-    );
-  }
-}
+      <Box display={{ base: "block", md: "none" }} onClick={handleToggleMenu}>
+        <svg fill="white" width="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </Box>
 
-export default withRouter(Header);
+      <Box
+        as="nav"
+        display={{ sm: show ? "block" : "none", md: "flex" }}
+        width={{ sm: "full", md: "auto" }}
+        alignItems="center"
+        justifyContent="flex-end"
+        flexGrow={1}
+        padding={{ sm: show && "0 1.5rem" }}
+      >
+        {links.map((item) => {
+          return (
+            <NextLink
+              key={item.id}
+              href={{
+                pathname: item.link,
+                query: {
+                  slug: "/",
+                },
+              }}
+            >
+              <PseudoBox
+                mt={{ base: 4, md: 0 }}
+                mr={12}
+                display="block"
+                fontSize="md"
+                borderBottomColor="transparent"
+                borderBottomWidth="2px"
+                color="purple.900"
+                cursor="pointer"
+                _hover={{ borderBottomColor: "tourquise.500" }}
+                _focus={{ borderBottomColor: "tourquise.500" }}
+                _active={{ borderBottomColor: "tourquise.500" }}
+              >
+                {item.title}
+              </PseudoBox>
+            </NextLink>
+          );
+        })}
+      </Box>
+    </Flex>
+  );
+};

@@ -17,6 +17,10 @@
     "@sanity/cli": "^1.149.16",
     "eslint-config-prettier": "^6.11.0",
     "lerna": "^3.9.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "jsonp": "^0.2.1"
   }
 }
