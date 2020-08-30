@@ -24,7 +24,6 @@ import imageSection from './objects/imageSection'
 import text3Images from './objects/text3Images'
 import responsiveGrid from './objects/responsiveGrid'
 import paymentSection from './objects/paymentSection'
-import mailchimp from './objects/mailchimp'
 import textSection from './objects/textSection'
 import FPHero from './objects/fp-hero'
 import FPArtists from './objects/fp-artists'
@@ -48,7 +47,6 @@ export default createSchema({
     paymentSection,
     internalLink,
     link,
-    mailchimp,
     page,
     portableText,
     route,

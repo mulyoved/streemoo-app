@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components-old/Layout";
+import Layout from "../components/Layout";
 import { Text, Flex } from "@chakra-ui/core";
 
 export default function TBDPage({ config }) {
