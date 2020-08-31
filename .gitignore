@@ -10,3 +10,6 @@
 dist
 studio/dist
 web/dist
+
+# Local Netlify folder
+.netlify

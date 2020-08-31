@@ -11,12 +11,14 @@
     "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "yarn run build && netlify deploy --dir=./web/out --site=2d77298f-d617-46a9-9ecb-4dafc8c8976f --prod && netlify deploy --dir=./studio/dist --site=860969ea-617a-4d97-9887-f54ea6c290aa --prod"
   },
   "devDependencies": {
     "@sanity/cli": "^1.150.1",
     "eslint-config-prettier": "^6.11.0",
     "lerna": "^3.9.0",
+    "netlify-cli": "^2.59.1",
     "prettier": "^2.1.1",
     "typescript": "^4.0.2"
   },
