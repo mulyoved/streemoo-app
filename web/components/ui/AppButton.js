@@ -25,7 +25,7 @@ export const AppButton = ({
       mt={mt && mt}
       outline="none"
       isDisabled={isDisabled}
-      _hover={!isDisabled && { bg: "gray.200", color: bg }}
+      _hover={!isDisabled && { bg: "gray.200", color: bg, fontWeight: "bolder" }}
       _focus={{ outline: 0 }}
       {...props}
     >

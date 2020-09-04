@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, {useRef, useState} from "react";
 import { Box, Flex, Image, Link, PseudoBox } from "@chakra-ui/core";
 import NextLink from "next/link";
 import SVG from "react-inlinesvg";
 import styles from "../components-old/Header.module.css";
+import useOutsideClick from '@rooks/use-outside-click';
 
 const links = [
   { id: 1, title: "Home", link: "/" },
@@ -11,8 +12,12 @@ const links = [
 ];
 
 export const Header = ({ logo }) => {
+  const pRef = useRef();
   const [show, setShow] = useState(false);
   const handleToggleMenu = () => setShow(!show);
+  useOutsideClick(pRef, () => {
+    setShow(false);
+  });
 
   const renderLogo = (logo) => {
     if (!logo || !logo.asset) {
@@ -28,10 +33,13 @@ export const Header = ({ logo }) => {
 
   return (
     <Flex
+      ref={pRef}
       align="center"
       justify="space-between"
       wrap="wrap"
-      padding="0.7rem"
+      py="0.7rem"
+      paddingLeft={["16px","16pxrem","60px","60px"]}
+      paddingRight="0.7rem"
       color="white"
       top={0}
       style={{
@@ -50,7 +58,7 @@ export const Header = ({ logo }) => {
         }}
         as="/"
       >
-        <Link to="/" style={{ width: "157px", height: "49px" }}>
+        <Link to="/" width={["117px","117px","157px","157px"]}>
           {renderLogo(logo)}
         </Link>
       </NextLink>

@@ -19,25 +19,26 @@ export const FPHero = ({ heading, text, backgroundImage }) => {
       overflow="hidden"
     >
       <Box
+        textAlign="center"
         d="flex"
         justify="center"
         alignItems="center"
         flexDirection="column"
-        pt={["100px", "100px", "135px", "160px"]}
+        pt={["100px", "100px", "160px", "180px"]}
         pb={["320px", "320px", "580px", "580px"]}
         color="white"
         overflow="hidden"
         mx="auto"
         width="90%"
       >
-        <Text as="h1" fontSize="xl">
+        <Text as="h1" fontSize={["4xl","4xl","6xl","6xl"]}>
           {heading}
         </Text>
         {text && (
           <Text
             width={["full", "full", "lg", "660px"]}
             textAlign="center"
-            fontSize="lg"
+            fontSize={["sm","sm","xl","xl"]}
             px={2}
             pt={2}
           >
