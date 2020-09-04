@@ -1,20 +1,14 @@
 import React from "react";
-import { Box, Image, Text, Heading } from "@chakra-ui/core";
+import { Box, Image, Text, Heading, Button as CButton } from "@chakra-ui/core";
 import { AppButton as Button } from "../ui/AppButton";
 import SimpleBlockContent from "../../components-old/SimpleBlockContent";
 import { urlFor } from "../utils";
 
-const artistsList = [
-  { id: 1, src: "artist-1", width: "356", gridColumn: "1 / 3" },
-  { id: 2, src: "artist-2", width: "362", gridColumn: "3 / 6" },
-  { id: 3, src: "artist-8", width: "178" },
-  { id: 4, src: "artist-3", width: "354", gridColumn: "2 / 4" },
-  { id: 5, src: "artist-6", width: "168" },
-  { id: 6, src: "artist-5", width: "268", gridColumn: "1 / 3" },
-  { id: 7, src: "artist-7", width: "450", gridColumn: "3 / 5" },
-];
-
 export const FPArtists = ({ heading, text, images, backgroundImage }) => {
+  const viewAllArtists = () => {
+    console.log(`muly:FPArtists:viewAllArtists`, {});
+  };
+
   return (
     <Box
       as="section"
@@ -79,11 +73,12 @@ export const FPArtists = ({ heading, text, images, backgroundImage }) => {
           title="View all artists shows"
           mt="80px"
           borderRadius="30px"
-          bg="blue.500"
+          variantColor="blue"
           fontSize="lg"
           height="52px"
           type="button"
           width="280px"
+          onClick={viewAllArtists}
         />
       </Box>
     </Box>

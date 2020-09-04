@@ -92,11 +92,11 @@ export const FPSubscribe = () => {
           </FormControl>
           <Button
             title="Subscribe"
+            variantColor="purple"
             height={["48px", "48px", "48px", "75px"]}
             borderRadius="11px"
             type="submit"
             width="full"
-            bg="purple.500"
             fontSize="lg"
             isDisabled={status === "success"}
           />

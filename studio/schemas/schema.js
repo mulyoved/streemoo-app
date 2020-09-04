@@ -30,6 +30,7 @@ import FPArtists from './objects/fp-artists'
 import FPSubscribe from './objects/fp-subscribe'
 import FPUpcoming from './objects/fp-upcoming'
 import gridImage from './objects/grid-image'
+import FPVideo from './objects/fp-video'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -60,5 +61,6 @@ export default createSchema({
     FPArtists,
     FPSubscribe,
     FPUpcoming,
+    FPVideo,
   ]),
 })

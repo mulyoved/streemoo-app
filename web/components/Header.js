@@ -3,6 +3,7 @@ import { Box, Flex, Image, Link, PseudoBox } from "@chakra-ui/core";
 import NextLink from "next/link";
 import SVG from "react-inlinesvg";
 import styles from "../components-old/Header.module.css";
+import { useRouter } from "next/router";
 import useOutsideClick from '@rooks/use-outside-click';
 
 const links = [
@@ -15,6 +16,7 @@ export const Header = ({ logo }) => {
   const pRef = useRef();
   const [show, setShow] = useState(false);
   const handleToggleMenu = () => setShow(!show);
+  const router = useRouter();
   useOutsideClick(pRef, () => {
     setShow(false);
   });
@@ -80,6 +82,7 @@ export const Header = ({ logo }) => {
         padding={{ sm: show && "0 1.5rem" }}
       >
         {links.map((item) => {
+          const selected = item.link === router.asPath;
           return (
             <NextLink
               key={item.id}
@@ -95,7 +98,8 @@ export const Header = ({ logo }) => {
                 mr={12}
                 display="block"
                 fontSize="md"
-                borderBottomColor="transparent"
+                fontWeight={selected ? "900" : "500"}
+                borderBottomColor={selected ? "tourquise.500" : "transparent"}
                 borderBottomWidth="2px"
                 color="purple.900"
                 cursor="pointer"

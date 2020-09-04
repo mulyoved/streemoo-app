@@ -3,6 +3,12 @@ import { Box, Heading } from "@chakra-ui/core";
 import Slider from "../Slider";
 import PropTypes from "prop-types";
 
+/*
+marginTop={["-200px", "-200px", "-250px"]}
+pb={["80px", "80px", "200px"]}
+pt="115px"
+*/
+
 export const FPUpcoming = ({ heading, images }) => {
   return (
     <Box
@@ -10,9 +16,6 @@ export const FPUpcoming = ({ heading, images }) => {
       backgroundImage={{ md: "url('line1.png')" }}
       backgroundRepeat="no-repeat"
       backgroundSize="contain"
-      pb={["80px", "80px", "200px"]}
-      pt="115px"
-      marginTop={["-200px", "-200px", "-250px"]}
       overflow="hidden"
     >
       <Box width="960px" maxWidth="100%" mx="auto">
@@ -20,11 +23,10 @@ export const FPUpcoming = ({ heading, images }) => {
           fontSize={["xl", "xl", "2xl", "5xl"]}
           color="purple.900"
           fontWeight="bold"
-          mt="88px"
-          mb="48px"
           textTransform="uppercase"
-          px={["0", "15px", "15px", "0"]}
-          textAlign={{ sm: "center", md: "left" }}
+          my="8"
+          px="15px"
+          textAlign="center"
         >
           {heading}
         </Heading>

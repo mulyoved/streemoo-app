@@ -21,6 +21,7 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'FPHero' },
+        { type: 'FPVideo' },
         { type: 'FPArtists' },
         { type: 'FPSubscribe' },
         { type: 'FPUpcoming' },
