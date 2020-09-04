@@ -1,10 +1,10 @@
 import React from "react";
-import { Box, Image, Text, Heading, Button as CButton } from "@chakra-ui/core";
+import { Box, Image, Text, Heading, Button as CButton, Flex } from "@chakra-ui/core";
 import { AppButton as Button } from "../ui/AppButton";
 import SimpleBlockContent from "../../components-old/SimpleBlockContent";
 import { urlFor } from "../utils";
 
-export const FPArtists = ({ heading, text, images, backgroundImage }) => {
+export const FPArtists = ({ heading, text, images, backgroundImage, lineImage }) => {
   const viewAllArtists = () => {
     console.log(`muly:FPArtists:viewAllArtists`, {});
   };
@@ -65,9 +65,9 @@ export const FPArtists = ({ heading, text, images, backgroundImage }) => {
       <Box
         width="100%"
         height="200px"
-        backgroundImage={{ md: "url('line2.png')" }}
+        backgroundImage={`url("${urlFor(lineImage).width(2732).auto("format").url()}")`}
         backgroundRepeat="no-repeat"
-        backgroundSize="contain"
+        backgroundSize="100% 100%"
       >
         <Button
           title="View all artists shows"

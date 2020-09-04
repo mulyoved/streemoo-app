@@ -33,6 +33,14 @@ export default {
         hotspot: false,
       },
     },
+    {
+      name: 'lineImage',
+      type: 'image',
+      title: 'Line image',
+      options: {
+        hotspot: false,
+      },
+    },
   ],
   preview: {
     select: {
