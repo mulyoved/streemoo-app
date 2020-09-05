@@ -56,7 +56,7 @@ export default {
       artist: 'artist.name',
       media: 'image',
     },
-    prepare({ title, artist, subtitle, media }) {
+    prepare({ title, artist, media }) {
       return {
         title: `${artist} - ${title}`,
         subtitle: 'Show',
