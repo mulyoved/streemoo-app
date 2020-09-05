@@ -9,6 +9,10 @@ import page from './documents/page'
 import route from './documents/route'
 import siteConfig from './documents/siteConfig'
 
+import artist from './documents/artist'
+import show from './documents/show'
+import performance from './documents/performance'
+
 // Object types
 import cta from './objects/cta'
 import embedHTML from './objects/embedHTML'
@@ -62,5 +66,9 @@ export default createSchema({
     FPSubscribe,
     FPUpcoming,
     FPVideo,
+
+    artist,
+    show,
+    performance,
   ]),
 })

@@ -19,6 +19,7 @@
     "@sanity/default-login": "^1.150.1",
     "@sanity/desk-tool": "^1.150.4",
     "bcp47": "^1.1.2",
+    "date-fns": "^2.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
