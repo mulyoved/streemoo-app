@@ -15,7 +15,7 @@
     "deploy": "yarn run build && netlify deploy --dir=./web/out --site=2d77298f-d617-46a9-9ecb-4dafc8c8976f --prod && netlify deploy --dir=./studio/dist --site=860969ea-617a-4d97-9887-f54ea6c290aa --prod"
   },
   "devDependencies": {
-    "@sanity/cli": "^1.150.1",
+    "@sanity/cli": "^1.150.7",
     "eslint-config-prettier": "^6.11.0",
     "lerna": "^3.9.0",
     "netlify-cli": "^2.59.1",
