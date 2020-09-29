@@ -17,6 +17,8 @@ export const FPUpcoming = ({ heading, images }) => {
       backgroundRepeat="no-repeat"
       backgroundSize="contain"
       overflow="hidden"
+      mt={24}
+      mb={40}
     >
       <Box width="960px" maxWidth="100%" mx="auto">
         <Heading
