@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Input, Flex, FormControl, Alert, AlertIcon } from "@chakra-ui/core";
+import { Box, Text, Input, Flex, FormControl, Alert, AlertIcon } from "@chakra-ui/core";
 import { AppButton as Button } from "../ui/AppButton";
 import jsonp from "jsonp";
 
@@ -42,6 +42,7 @@ export const FPSubscribe = () => {
   return (
     <Flex
       as="section"
+      position="relative"
       mt={{ sm: "0", lg: "100px" }}
       mb={["40px", "40px", "100px"]}
       mx="auto"
@@ -56,19 +57,13 @@ export const FPSubscribe = () => {
         fontFamily="Roboto"
         fontStyle="italic"
         fontWeight="bold"
-        fontSize={["3xl", "3xl", "3xl", "6xl", "7xl"]}
-        lineHeight={["40px", "40px", "60px", "90px"]}
+        fontSize="4xl"
         textTransform="uppercase"
         background="linear-gradient(113.61deg, #6E7FE3 34.79%, #BA25C4 87.76%)"
         style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
       >
         Subscribe
-        <Box
-          fontSize={["2xl", "2xl", "2xl", "5xl", "6xl"]}
-          lineHeight={["50px", "50px", "50px", "80px"]}
-        >
-          to stay tuned
-        </Box>
+        <Box fontSize="2xl">to stay tuned</Box>
       </Box>
       <Box
         ml={["0", "0", "0", "55px"]}
@@ -88,6 +83,7 @@ export const FPSubscribe = () => {
               mb="14px"
               value={email}
               onChange={(e) => setEmail(e.currentTarget.value)}
+              isDisabled={status === "success"}
             />
           </FormControl>
           <Button
@@ -107,12 +103,6 @@ export const FPSubscribe = () => {
           <Alert status="info">
             <AlertIcon />
             Sending...
-          </Alert>
-        )}
-        {status === "success" && (
-          <Alert status="success">
-            <AlertIcon />
-            Thank you for subscribing!
           </Alert>
         )}
         {status === "duplicate" && (
@@ -140,6 +130,34 @@ export const FPSubscribe = () => {
           </Alert>
         )}
       </Box>
+
+      {status === "success" && (
+        <Box
+          maxWidth="100%"
+          position="absolute"
+          margin="auto"
+          textAlign="center"
+          backgroundColor="purple.500"
+          color="white"
+          boxShadow="0px 4.10505px 4.10505px rgba(0, 0, 0, 0.25)"
+          borderRadius="25px"
+          p={12}
+          zIndex={10}
+        >
+          <Text
+            fontSize="4xl"
+            textTransform="uppercase"
+            fontFamily="Roboto"
+            fontStyle="italic"
+            fontWeight="bold"
+          >
+            Thank you
+          </Text>
+          <Text fontSize="2xl" fontFamily="Roboto" fontStyle="italic" fontWeight="bold">
+            for subscribing!
+          </Text>
+        </Box>
+      )}
     </Flex>
   );
 };

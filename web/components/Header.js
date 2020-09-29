@@ -1,10 +1,10 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import { Box, Flex, Image, Link, PseudoBox } from "@chakra-ui/core";
 import NextLink from "next/link";
 import SVG from "react-inlinesvg";
 import styles from "../components-old/Header.module.css";
 import { useRouter } from "next/router";
-import useOutsideClick from '@rooks/use-outside-click';
+import useOutsideClick from "@rooks/use-outside-click";
 
 const links = [
   { id: 1, title: "Home", link: "/" },
@@ -40,7 +40,7 @@ export const Header = ({ logo }) => {
       justify="space-between"
       wrap="wrap"
       py="0.7rem"
-      paddingLeft={["16px","16pxrem","60px","60px"]}
+      paddingLeft={["16px", "16px", "60px", "60px"]}
       paddingRight="0.7rem"
       color="white"
       top={0}
@@ -60,7 +60,7 @@ export const Header = ({ logo }) => {
         }}
         as="/"
       >
-        <Link to="/" width={["117px","117px","157px","157px"]}>
+        <Link to="/" width={["117px", "117px", "157px", "157px"]}>
           {renderLogo(logo)}
         </Link>
       </NextLink>
@@ -79,7 +79,10 @@ export const Header = ({ logo }) => {
         alignItems="center"
         justifyContent="flex-end"
         flexGrow={1}
-        padding={{ sm: show && "0 1.5rem" }}
+        bg={{ sm: "rgba(255, 251, 251, 0.7)", md: "transparent" }}
+        boxShadow={{ sm: "0px 2px 2px rgba(0, 0, 0, 0.25)", md: "none" }}
+        borderRadius="25px"
+        padding={{ sm: show && "0 1.5rem 1rem" }}
       >
         {links.map((item) => {
           const selected = item.link === router.asPath;
@@ -96,7 +99,7 @@ export const Header = ({ logo }) => {
               <PseudoBox
                 mt={{ base: 4, md: 0 }}
                 mr={12}
-                display="block"
+                display="inline-block"
                 fontSize="md"
                 fontWeight={selected ? "900" : "500"}
                 borderBottomColor={selected ? "tourquise.500" : "transparent"}

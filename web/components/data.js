@@ -6,7 +6,7 @@ const footerLinks = [
 const social = [
   {
     id: 1,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/streemoolive",
     src: "facebook.svg",
     alt: "Streemoo Facebook",
     ml: "30px",
@@ -16,6 +16,13 @@ const social = [
     href: "https://instagram.com",
     src: "instagram.svg",
     alt: "Streemoo Instagram",
+    ml: "20px",
+  },
+  {
+    id: 3,
+    href: "https://www.linkedin.com/company/streemoo/",
+    src: "linkdin.svg",
+    alt: "Streemoo linkdin",
     ml: "20px",
   },
 ];
