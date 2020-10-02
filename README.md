@@ -15,3 +15,11 @@ Kickbuild v3
 # Facebook login notes
 Make sure to set Valid OAuth Redirect URIs
 
+
+
+# Netlify deploy env vatriables
+FACEBOOK_CLIENT_ID
+FACEBOOK_CLIENT_SECRET
+NEXTAUTH_URL
+SANITY_DEPLOY_STUDIO_TOKEN
+
