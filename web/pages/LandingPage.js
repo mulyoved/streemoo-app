@@ -7,7 +7,6 @@ import Layout from "../components/Layout";
 import client from "../client";
 import RenderSections from "../components/RenderSections";
 import { Box, Flex, Image, Text } from "@chakra-ui/core";
-import { signOut } from "next-auth/client";
 import { AuthSection } from "../components/ui/AuthSection";
 
 const builder = imageUrlBuilder(client);
@@ -171,6 +170,7 @@ export async function getStaticProps({ params }) {
       `
   );
 
+  console.log(`muly:LandingPage:getStaticProps`, { res });
   return { props: res.frontpage };
 }
 
