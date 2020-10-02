@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && pwd && ls -la",
-    "postbuild": "next-on-netlify",
+    "postbuild": "next-on-netlify && pwd && ls -la",
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
     "lint": "eslint .",
     "start": "next start",
