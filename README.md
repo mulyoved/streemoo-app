@@ -10,4 +10,4 @@ https://github.com/cyrilwanner/next-optimized-images
 https://github.com/vercel/swr
 https://github.com/nandorojo/swr-firestore
 
-Kickbuild v1
+Kickbuild v2
