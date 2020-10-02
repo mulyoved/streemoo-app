@@ -38,13 +38,13 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'description',
+      slug: 'slug',
       media: 'image',
     },
-    prepare({ title, subtitle, media }) {
+    prepare({ title, slug, media }) {
       return {
         title,
-        subtitle,
+        subtitle: slug.current,
         media,
       }
     },

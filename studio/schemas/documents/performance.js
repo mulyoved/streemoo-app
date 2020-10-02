@@ -1,4 +1,5 @@
 import format from 'date-fns/format'
+import parseISO from 'date-fns/parseISO'
 
 export default {
   name: 'performance',
@@ -49,7 +50,7 @@ export default {
     },
     prepare({ date, artist, show, media }) {
       return {
-        title: `${format(date, 'YYYY-MM-DD HH:mm')}`,
+        title: `${format(parseISO(date), 'yyyy-MM-dd HH:mm')}`,
         subtitle: `${artist} - ${show}`,
         media,
       }

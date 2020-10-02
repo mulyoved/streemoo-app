@@ -34,6 +34,7 @@ const reduceRoutes = (obj, route) => {
 };
 
 module.exports = {
+  target: "serverless",
   exportPathMap: function () {
     return client.fetch(query).then((res) => {
       const { routes = [] } = res;

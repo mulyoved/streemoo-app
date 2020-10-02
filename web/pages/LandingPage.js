@@ -50,6 +50,7 @@ class LandingPage extends Component {
     }
 
     // Frontpage
+    // TBD:handle other slug like artists_shows
     if (slug && slug === "/") {
       return client
         .fetch(
