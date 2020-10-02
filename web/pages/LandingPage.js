@@ -6,6 +6,9 @@ import imageUrlBuilder from "@sanity/image-url";
 import Layout from "../components/Layout";
 import client from "../client";
 import RenderSections from "../components/RenderSections";
+import { Box, Flex, Image, Text } from "@chakra-ui/core";
+import { signOut } from "next-auth/client";
+import { AuthSection } from "../components/ui/AuthSection";
 
 const builder = imageUrlBuilder(client);
 const pageQuery = groq`
@@ -39,7 +42,8 @@ class LandingPage extends Component {
     slug: PropTypes.any,
   };
 
-  static async getInitialProps({ query }) {
+  static async xgetInitialProps({ query }) {
+    console.log(`muly:LandingPage:getInitialProps`, { query });
     const { slug } = query;
     if (!query) {
       console.error("no query");
@@ -73,13 +77,19 @@ class LandingPage extends Component {
         }
       `
         )
-        .then((res) => ({ ...res.frontpage, slug }));
+        .then((res) => {
+          console.log(`muly:LandingPage:`, { ...res.frontpage, slug });
+          return { ...res.frontpage, slug };
+        });
     }
 
     return null;
   }
 
   render() {
+    console.log(`muly:LandingPage:render`, {
+      p: this.props,
+    });
     const {
       title = "Missing title",
       description,
@@ -130,9 +140,38 @@ class LandingPage extends Component {
           }}
         />
         {content && <RenderSections sections={content} />}
+        <Box>
+          <Text>Experimental</Text>
+          <AuthSection></AuthSection>
+        </Box>
       </Layout>
     );
   }
+}
+
+export async function getStaticProps({ params }) {
+  const res = await client.fetch(
+    groq`
+        *[_id == "global-config"][0]{
+          frontpage -> {
+            ...,
+            content[] {
+              ...,
+              cta {
+                ...,
+                route->
+              },
+              ctas[] {
+                ...,
+                route->
+              }
+            }
+          }
+        }
+      `
+  );
+
+  return { props: res.frontpage };
 }
 
 export default LandingPage;

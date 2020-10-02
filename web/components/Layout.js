@@ -17,7 +17,6 @@ function Layout(props) {
   const { title, mainNavigation, footerNavigation, footerText, logo, url } = config;
   const logoUrl = logo && logo.asset && logo.asset.url;
 
-  console.log("muly:Header", { title, mainNavigation, logo });
   return (
     <>
       <Head>

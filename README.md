@@ -11,3 +11,7 @@ https://github.com/vercel/swr
 https://github.com/nandorojo/swr-firestore
 
 Kickbuild v3
+
+# Facebook login notes
+Make sure to set Valid OAuth Redirect URIs
+

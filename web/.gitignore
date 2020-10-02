@@ -39,3 +39,5 @@ jspm_packages
 
 # Static
 out
+out_functions
+out_publish
