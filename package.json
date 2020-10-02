@@ -6,7 +6,7 @@
     "build": "lerna run build --parallel",
     "build-web": "lerna bootstrap && (cd web && npm run build)",
     "build-studio": "lerna bootstrap && (cd studio && npm run build)",
-    "dev": "lerna run dev --parallel",
+    "dev": "env-cmd lerna run dev --parallel",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@sanity/cli": "^1.150.7",
+    "env-cmd": "^10.1.0",
     "eslint-config-prettier": "^6.11.0",
     "lerna": "^3.9.0",
     "netlify-cli": "^2.59.1",

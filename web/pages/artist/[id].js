@@ -21,7 +21,7 @@ class Artist extends Component {
 
     return (
       <div>
-        Artist {id}
+        Artist v3 {id}
         <Text>{name}</Text>
         <Text>slug: {slug.current}</Text>
         <SimpleBlockContent blocks={description} />
