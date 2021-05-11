@@ -21,7 +21,7 @@
     "@zeit/next-css": "^1.0.1",
     "emotion-theming": "^10.0.27",
     "groq": "^1.150.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "^9.5.2",
     "next-seo": "^4.7.3",
     "react": "^16.13.1",
